@@ -4028,11 +4028,9 @@ rfr3 <- ggplot(rmse_plot_df, aes(x = Horizon, y = RMSE, colour = Model)) +
 
 top_row <- rfr1 + rfr2
 
-# Центруем нижний график между пустыми местами
 bottom_row <- plot_spacer() + rfr3 + plot_spacer()
-bottom_row <- bottom_row + plot_layout(widths = c(1, 2, 1))  # Центрируем RMSE
+bottom_row <- bottom_row + plot_layout(widths = c(1, 2, 1)) 
 
-# Объединяем всё и добавляем заголовок и общую легенду
 final_plot <- (top_row / bottom_row) + 
   plot_layout(guides = "collect") & 
   theme(legend.position = "bottom")
@@ -4046,7 +4044,6 @@ final_plot <- final_plot +
     )
   )
 
-# Визуализация
 x11()
 final_plot
 ggsave("C:/Users/Admin/Desktop/Kursinis 2025/grafikai/kurs47.png", plot = final_plot, width = 10, height = 6, dpi = 300, bg = "white")
@@ -6124,7 +6121,6 @@ for (i in 1:(max_index - window_size + 1)) {
   X_window <- X[i:(i + window_size - 1), ]
   y_window <- y[i:(i + window_size - 1)]
   
-  # Первичная модель для отбора важных переменных
   dtrain <- xgb.DMatrix(data = X_window, label = y_window)
   model_importance <- xgboost(
     data = dtrain,
@@ -6136,7 +6132,7 @@ for (i in 1:(max_index - window_size + 1)) {
   
   importance <- xgb.importance(model = model_importance)
   
-  if (nrow(importance) == 0) next  # пропускаем, если не удалось определить важности
+  if (nrow(importance) == 0) next 
   
   top_n <- min(20, nrow(importance))
   top_20_vars <- importance$Feature[1:top_n]
@@ -6162,7 +6158,6 @@ for (i in 1:(max_index - window_size + 1)) {
     verboseIter = FALSE
   )
   
-  # Финальный XGBoost
   xgb_model <- train(
     x = as.data.frame(X_window_selected),
     y = y_window,
@@ -6172,7 +6167,6 @@ for (i in 1:(max_index - window_size + 1)) {
     verbose = FALSE
   )
   
-  # ARIMA прогнозы по выбранным признакам
   arima_forecasts <- list()
   for (j in 1:ncol(X_window_selected)) {
     model <- auto.arima(X_window_selected[, j])
@@ -6388,7 +6382,7 @@ for (i in 1:(max_index - window_size + 1)) {
   
   importance <- xgb.importance(model = model_importance)
   
-  if (nrow(importance) == 0) next  # пропускаем, если не удалось определить важности
+  if (nrow(importance) == 0) next 
   
   top_n <- min(20, nrow(importance))
   top_20_vars <- importance$Feature[1:top_n]
@@ -6424,7 +6418,6 @@ for (i in 1:(max_index - window_size + 1)) {
     verbose = FALSE
   )
   
-  # ARIMA прогнозы по выбранным признакам
   arima_forecasts <- list()
   for (j in 1:ncol(X_window_selected)) {
     model <- auto.arima(X_window_selected[, j])
