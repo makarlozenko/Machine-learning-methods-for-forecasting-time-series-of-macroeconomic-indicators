@@ -11,3 +11,12 @@ https://drive.google.com/drive/folders/1KJkwcrIYoj76-Kh9U96yczlGoHkUndbf?usp=sha
 - duomenu_tvarkyba - čia vyksta pirminis duomenų surinkimas ir apdorojimas: NA šalinimas, stacionarumo tikrinimas bei taisymas, normalizavimas. Gale pateiktas bendras BVP grafikas.
 - paprasciausi_modeliai - čia vyksta kintamųjų atrinkimas bei buvo išnagrinėti paprasčiausi prognozavimo modeliai, tarp kurių ARIMA, tiesinė regresija, LASSO, Ridge, Elastic Net, Adaptive LASSO bei Random Forest modeliai. 
 - slenkancio_lango_modeliai - čia buvo testuojami tokie slenkančio lango modeliai: Post–LASSO su tiesine regresija, Post–LASSO su LASSO, Random Forest su tarpusavio informacija, Random Forest su LASSO, Random Forest su Random Forest, XGBOOST (paprastas ir tiesinis metodas) su Random Forest, XGBOOST (paprastas ir tiesinis metodas) su LASSO, XGBOOST (paprastas ir tiesinis metodas) su XGBOOST bei Random Forest su XGBOOST.
+
+# tactis2.ipynb failas
+Šiame faile yra TACTiS-2 kodas, kuris atlieka aprašytus kursiniame darbe veiksmus.
+
+# stacionarus rinkinys.xlsx
+Šiame faile yra aprašytas darbe stacionarus rinkinys.
+
+# nestacionarus rinkinys.xlsx
+Šiame faile yra aprašytas darbe nestacionarus rinkinys.
